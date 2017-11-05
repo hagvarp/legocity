@@ -1,3 +1,6 @@
 [submodule "slick"]
-	path = slick
-	url = git@github.com:kenwheeler/slick.git
+	path = lib/js/slick
+	url = https://github.com/kenwheeler/slick.git
+[submodule "lib/font/hagstova.fo.nts"]
+	path = lib/font/hagstova.fo.nts
+	url = https://github.com/hagstovan/hagstova.fo.nts.git
