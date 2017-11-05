@@ -4,3 +4,9 @@
 [submodule "lib/font/hagstova.fo.nts"]
 	path = lib/font/hagstova.fo.nts
 	url = https://github.com/hagstovan/hagstova.fo.nts.git
+[submodule "lib/js/JSON-stat"]
+	path = lib/js/JSON-stat
+	url = https://github.com/badosa/JSON-stat.git
+[submodule "lib/js/jquery-dist"]
+	path = lib/js/jquery-dist
+	url = https://github.com/jquery/jquery-dist.git
