@@ -202,7 +202,63 @@ function numberWithCommas(x) {
 
 
 
+//---------------------------------------------------------
+//                       CHART 4
+//---------------------------------------------------------
+            var chart4;
+            var chart4Data;
+            var chart4_last_month;
 
+            //Chart 21 specific functions
+            function drawChart4() {
+                var jsonStatData = chart4Data;
+                //Extrat Data From JSON Stat
+                ds = JSONstat(jsonStatData).Dataset(0);
+
+                //Format Data
+               
+               m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
+
+                $('#labourforcemonth').append(m);
+                number = ds.Data({ "year": ds.Dimension("year").id[0] }, false);
+                number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
+                number = numberWithCommas(number);
+                $('#labourforcenumber').append(number);
+
+
+            }
+
+            function loadDataAndBuildChart4() {
+                POST("https://statbank.hagstova.fo/api/v1/fo/H2/AM/AM01/afk_hovtol.px", {
+                    "query": [
+                        {
+                          "code": "main figures",
+                          "selection": {
+                            "filter": "item",
+                            "values": [
+                              "VP"
+                            ]
+                          }
+                        },
+                        {
+                            "code": "year",
+                            "selection": {
+                                "filter": "top",
+                                "values": [
+                                    "1"
+                                ]
+                            }
+                        }                  
+
+                    ],
+                    "response": {
+                        "format": "json-stat"
+                    }
+                }, function(data) {
+                    chart4Data = data;
+                    drawChart4();
+                });
+            }
 
 
 
@@ -226,4 +282,6 @@ function numberWithCommas(x) {
                 loadDataAndBuildChart1();
                 loadDataAndBuildChart2();
                 loadDataAndBuildChart3();
+                loadDataAndBuildChart4();
+
             });            

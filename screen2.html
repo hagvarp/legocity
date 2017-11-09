@@ -57,7 +57,7 @@
     }
     .procent{
         color: #FFF;
-        font-size: 2em !important;
+        font-size: 2.0em !important;
         font-family: 'Open Sans', sans-serif !important;
         font-weight: 800 !important; 
         text-transform: uppercase !important;
@@ -97,41 +97,46 @@
 <body>
 
   <section class="statistics slider">
-    <div>
-      <h1 class="live">Altíð <br />nýggjastu <br />hagtølini <br /></h1>
-      <p></p>
-    </div>
+      <div>
+        <h1 class="live">Altíð <br />nýggjastu <br />hagtølini <br /></h1>
+        <p></p>
+      </div>
 
-
-    <div>
-      <h1 class="lego">Arbeiðsfjøld</h1>
-      <span class="tal" id="labourforcenumber"></span><span class="procent">%</span>
-      <p id="labourforcemonth"></p>
-    </div>
-
-
-    <div>
-      <h1 class="lego">Løntakarar</h1>
-      <span class="tal" id="employeesnumber"></span><span class="procent"></span>
-      <p id="employeesmonth"></p>
-    </div>
-    <div>
-      <h1 class="lego">Arbeiðsloysi</h1>
-      <span class="tal" id="unemploymentnumber"></span><span class="procent"> %</span>
-      <p id="unemploymentmonth"></p>
-    </div>
-
-
-    <div>
-      <h1 class="lego">Lønargjaldingar</h1>
-      <span class="tal" id="wageearningnumber"></span><span class="procent"> mió</span>
-      <p id="wageearningmonth"></p>
-    </div>
+      <div>
+        <h1 class="lego">Fólkatalið</h1>
+        <span class="tal" id="popuplationnumber"></span><span class="procent"></span>
+        <p id="popuplationmonth"></p>
+      </div>
+      <div>
+        <h1 class="lego">Lívsævi, menn</h1>
+        <span class="tal" id="lifeexpectancymennumber"></span><span class="procent"> ár</span>
+        <p id="lifeexpectancymenmonth"></p>
+      </div>
+      <div>
+        <h1 class="lego">Lívsævi, kvinnur</h1>
+        <span class="tal" id="lifeexpectancywomennumber"></span><span class="procent"> ár</span>
+        <p id="lifeexpectancywomenmonth"></p>
+      </div>
+      <div>
+        <h1 class="lego">Pensjónistar <br />(67+ ár)</h1>
+        <span class="tal" id="pensionersnumber"></span><span class="procent"> %</span>
+        <p id="pensionersmonth"></p>
+      </div>
+      <div>
+        <h1 class="lego">Børn og ung<br />(0-17 ár)</h1>
+        <span class="tal" id="childrennumber"></span><span class="procent"> %</span>
+        <p id="childrenmonth"></p>
+      </div>
+      <div>
+        <h1 class="lego">Børn á dagstovni <br /> og í dagrøkt</h1>
+        <span class="tal" id="daycarenumber"></span><span class="procent"></span>
+        <p id="daycaremonth"></p>
+      </div>
   </section>
 
   <script src="lib/js/jquery-dist/dist/jquery.min.js"></script>
   <script src="lib/js/JSON-stat/json-stat.js"></script>
-  <script src="js/work.js"></script>
+  <script src="js/social.js"></script>
   <script src="lib/js/slick/slick/slick.js"></script>
   
 
