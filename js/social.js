@@ -4,10 +4,10 @@ Date.prototype.getMonthText = function() {
   return months[this.getMonth()];
 }
 
-
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
 
 
 //---------------------------------------------------------
@@ -32,9 +32,12 @@ function numberWithCommas(x) {
                 number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
 
                 mon = mon.replace("M", "-");              
+                mon = year + mon;
                 mon = new Date(mon);
 
                 number = numberWithCommas(number);
+
+
 
                 $('#popuplationmonth').append("1. " + mon.getMonthText().toLowerCase() + " " +  year);
                 $('#popuplationnumber').append(number);
