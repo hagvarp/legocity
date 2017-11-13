@@ -32,8 +32,7 @@
         display: block;
         margin: auto;
         width: 40%;
-    }
-
+    }      
     .live{
         color: #FFF;
         font-size: 2em !important;
@@ -98,7 +97,6 @@
     .slick-current {
       opacity: 1;
     }
-
   </style>
 </head>
 <body>
@@ -108,33 +106,33 @@
       <img src="images/logo_white.svg" alt="Logo" id="logo" style="width:150px; padding-left: 16px; padding-top: 10px" />
       <p>Fleiri hagtøl <br />á hagstova.fo</p>
     </div>
-
-
     <div>
-      <h1 class="lego">Brennievni o.t.</h1>
-      <span class="tal" id="fuelnumber"></span><span class="procent"> <br />mió. kr.</span>
-      <p id="fuelmonth"></p>
-    </div>
-
-    <div>
-      <h1 class="lego">Persónbilar</h1>
-      <span class="tal" id="vehiclesnumber"></span><span class="procent"></span>
-      <p id="vehiclesmonth"></p>
+      <h1 class="lego">Laksur tikin</h1>
+      <span class="tal" id="salmonharvestnumber"></span><span class="procent"> <br />tons</span>
+      <p id="salmonharvestmonth"></p>
     </div>
     <div>
-      <h1 class="lego">Brúkaraprístalið</h1>
-      <span class="tal" id="brpnumber"></span><span class="procent"></span>
-      <p id="brpmonth"></p>
+      <h1 class="lego">Laksasmolt útsett</h1>
+      <span class="tal" id="salmonsmoltnumber"></span><span class="procent"></span>
+      <p id="salmonsmoltmonth"></p>
     </div>
+    <div>
+      <h1 class="lego">Útflutningur <br />laksur</h1>
+      <span class="tal" id="salmonexportnumber"></span><span class="procent"> <br />mió. kr.</span>
+      <p id="salmonexportmonth"></p>
+    </div>
+    <div>
+      <h1 class="lego">Útflutningur <br />laksur</h1>
+      <span class="tal" id="salmonexporttonnesnumber"></span><span class="procent"> <br />tons</span>
+      <p id="salmonexporttonnesmonth"></p>
+    </div>    
   </section>
 
   <script src="lib/js/jquery-dist/dist/jquery.min.js"></script>
   <script src="lib/js/JSON-stat/json-stat.js"></script>
-  <script src="js/citycenter.js"></script>
+  <script src="js/salmon.js"></script>
   <script src="lib/js/slick/slick/slick.js"></script>
   
-
-
 
   <script type="text/javascript">
     $(document).on('ready', function() {
