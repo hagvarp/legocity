@@ -154,62 +154,66 @@ function numberWithCommas(x) {
 //---------------------------------------------------------
 //                       CHART 3
 //---------------------------------------------------------
-            var chart3;
-            var chart3Data;
-            var chart3_last_month;
+            var chart63;
+            var chart63Data;
+            var chart63_last_month;
 
             //Chart 1 specific functions
-            function drawChart3() {
-                var jsonStatData = chart3Data;
+            function drawChart63() {
+                var jsonStatData = chart63Data;
                 //Extrat Data From JSON Stat
                 ds = JSONstat(jsonStatData).Dataset(0);
 
                 //Format Data
-                var data = [];
-               
-                m = ds.Dimension("month").Category(ds.Dimension("month").id[0]).label;
-                mon = m.replace("M", "-");
-                mon = new Date(mon);
-                $('#wageearningmonth').append(mon.getMonthText() + " " +  mon.getFullYear());
-                arbeidsloys = ds.Data({ "month": ds.Dimension("month").id[0] }, false);
-                arbeidsloys = parseFloat(Math.round(arbeidsloys * 100) / 100000).toFixed(0).toString().replace(".", ",");
-                $('#wageearningnumber').append(arbeidsloys);
+                year = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
+
+                number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function(n) { return n; });
+                mon = ds.Dimension("quarters").id[number.length-1];
+                number = ds.Data({ "year": ds.Dimension("year").id[0], "quarters": ds.Dimension("quarters").id[number.length - 1] }, false);
+
+
+                number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");
+                number = numberWithCommas(number);
+
+                $('#handilmonth').append(mon + " " +  year);
+                $('#handilnumber').append(number);
 
 
             }
 
-            function loadDataAndBuildChart3() {
+            function loadDataAndBuildChart63() {
                 POST("https://statbank.hagstova.fo/api/v1/fo/H2/VV/VV05/handil_mvg.px", {
                     "query": [
-                    {
-                      "code": "commodity groups",
-                      "selection": {
-                        "filter": "item",
-                        "values": [
-                          "10_CUR"
-                        ]
-                      }
-                    },
-                    {
-                        "code": "year",
-                        "selection": {
-                            "filter": "top",
-                            "values": [
-                                "1"
-                            ]
-                        }
-                    },   
-                    {
-                      "code": "quarters",
-                      "selection": {
-                        "filter": "item",
-                        "values": [
-                          "Q01",
-                          "Q02",
-                          "QO3"
-                        ]
-                      }
-                    },                  
+    {
+      "code": "commodity groups",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "10_CUR"
+        ]
+      }
+    },
+    {
+      "code": "year",
+      "selection": {
+        "filter": "top",
+        "values": [
+          "1"
+        ]
+      }
+    },
+    {
+      "code": "quarters",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "Q01",
+          "Q02",
+          "QO3",
+          "QO4"
+        ]
+      }
+    }               
 
 
 
@@ -218,8 +222,8 @@ function numberWithCommas(x) {
                         "format": "json-stat"
                     }
                 }, function(data) {
-                    chart3Data = data;
-                    drawChart3();
+                    chart63Data = data;
+                    drawChart63();
                 });
             }
 
@@ -304,7 +308,7 @@ function numberWithCommas(x) {
             $(function () {
                 loadDataAndBuildChart61();
                 loadDataAndBuildChart62();
-                loadDataAndBuildChart3();
+                loadDataAndBuildChart63();
                 loadDataAndBuildChart4();
 
             });            
