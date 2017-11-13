@@ -168,8 +168,6 @@ function numberWithCommas(x) {
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");
                 number = numberWithCommas(number);
 
-
-
                 $('#brpmonth').append("1. " + mon + " " +  year);
                 $('#brpnumber').append(number);
              

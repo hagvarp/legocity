@@ -35,7 +35,7 @@ function numberWithCommas(x) {
                 number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
 
                 mon = mon.replace("M", "-");              
-
+                mon = year + mon;
                 mon = new Date(mon);
 
                 $('#immigrantmonth').append(mon.getMonthText() + " " +  year);
@@ -103,7 +103,8 @@ function numberWithCommas(x) {
                 mon = ds.Dimension("month").id[number.length - 1];
                 number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
 
-                mon = mon.replace("M", "-");              
+                mon = mon.replace("M", "-");   
+                mon = year + mon;                           
                 mon = new Date(mon);
 
                 $('#emmigrantmonth').append(mon.getMonthText() + " " +  year);
