@@ -179,26 +179,37 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart3() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/AM/AM04/lon_ajtrmd_t.px", {
+                POST("https://statbank.hagstova.fo/api/v1/fo/H2/VV/VV05/handil_mvg.px", {
                     "query": [
-                        {
-                            "code": "value mode",
-                            "selection": {
-                                "filter": "item",
-                                "values": [
-                                    "WA"
-                                ]
-                            }
-                        },
-                        {
-                            "code": "month",
-                            "selection": {
-                                "filter": "top",
-                                "values": [
-                                    "1"
-                                ]
-                            }
-                        },                  
+                    {
+                      "code": "commodity groups",
+                      "selection": {
+                        "filter": "item",
+                        "values": [
+                          "10_CUR"
+                        ]
+                      }
+                    },
+                    {
+                        "code": "year",
+                        "selection": {
+                            "filter": "top",
+                            "values": [
+                                "1"
+                            ]
+                        }
+                    },   
+                    {
+                      "code": "quarters",
+                      "selection": {
+                        "filter": "item",
+                        "values": [
+                          "Q01",
+                          "Q02",
+                          "QO3"
+                        ]
+                      }
+                    },                  
 
 
 
