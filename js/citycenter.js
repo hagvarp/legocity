@@ -89,7 +89,7 @@ function numberWithCommas(x) {
 
                m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
 
-                $('#vehiclesmonth').append(m);
+                $('#vehiclesmonth').append(m.toLowerCase());
                 number = ds.Data({ "year": ds.Dimension("year").id[0] }, false);
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");
                 number = numberWithCommas(number);
@@ -168,7 +168,7 @@ function numberWithCommas(x) {
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");
                 number = numberWithCommas(number);
 
-                $('#brpmonth').append("1. " + mon + " " +  year);
+                $('#brpmonth').append(mon + " " +  year);
                 $('#brpnumber').append(number);
              
             }
