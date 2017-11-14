@@ -38,7 +38,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart1() {
-                POST("http://statbank.hagstova.fo/api/v1/fo/H2/VV/VV07/gist_alt_t.px", {
+                POST("https://statbank.hagstova.fo/api/v1/fo/H2/VV/VV07/gist_alt_t.px", {
                     "query": [
                         {
                           "code": "unit",
