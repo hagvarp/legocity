@@ -32,8 +32,6 @@ function numberWithCommas(x) {
                 number = numberWithCommas(number);
                 $('#mailnumber').append(number);
 
-                console.log(number);
-
 
             }
 
@@ -95,9 +93,9 @@ function numberWithCommas(x) {
                 mon = new Date(mon);
                 $('#foodmonth').append(mon.getMonthText() + " " +  mon.getFullYear());
                 number = ds.Data({ "month": ds.Dimension("month").id[0] }, false);
-                number = numberWithCommas(number);
+                
 
-                number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
+                number = parseFloat(Math.round(number * 100) / 100000).toFixed(1).toString().replace(".", ",");
 
                 $('#foodnumber').append(number);
 
@@ -169,6 +167,7 @@ function numberWithCommas(x) {
 
                 number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function(n) { return n; });
                 mon = ds.Dimension("quarters").id[number.length-1];
+
                 number = ds.Data({ "year": ds.Dimension("year").id[0], "quarters": ds.Dimension("quarters").id[number.length - 1] }, false);
 
 
