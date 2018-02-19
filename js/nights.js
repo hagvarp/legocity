@@ -45,7 +45,7 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "NIGHTS"
+                              "0"
                             ]
                           }
                         },
