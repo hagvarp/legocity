@@ -110,7 +110,7 @@ function numberWithCommas(x) {
                             }
                         },                  
                         {
-                          "code": "region",
+                          "code": "district",
                           "selection": {
                             "filter": "item",
                             "values": [

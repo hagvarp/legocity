@@ -221,6 +221,8 @@ function numberWithCommas(x) {
 
                 $('#labourforcemonth').append(m);
                 number = ds.Data({ "year": ds.Dimension("year").id[0] }, false);
+                
+                console.log(number);
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
                 number = numberWithCommas(number);
                 $('#labourforcenumber').append(number);
@@ -231,6 +233,15 @@ function numberWithCommas(x) {
             function loadDataAndBuildChart4() {
                 POST("https://statbank.hagstova.fo/api/v1/fo/H2/AM/AM01/afk_hovtol.px", {
                     "query": [
+                        {
+                          "code": "Agegroup",
+                          "selection": {
+                            "filter": "item",
+                            "values": [
+                              "15_74"
+                            ]
+                          }
+                        },
                         {
                           "code": "main figures",
                           "selection": {
