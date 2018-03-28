@@ -204,12 +204,9 @@ function numberWithCommas(x) {
     {
       "code": "quarters",
       "selection": {
-        "filter": "item",
+        "filter": "all",
         "values": [
-          "Q01",
-          "Q02",
-          "QO3",
-          "QO4"
+          "*"
         ]
       }
     }               

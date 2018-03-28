@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Legobýur Hagstovunar</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="lib/js/slick/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="lib/js/slick/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="lib/font/hagstova.fo.nts/open-sans/font.css">
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      margin-left: -30px;
+      margin-top: 20px;
+      padding: 0;
+      background-color: #004b7f;
+      color: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    div {
+        text-align: center;
+    }
+    p{
+      color: #FFF;
+        font-size: 1.2em !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 400 !important;  
+    }
+    img {
+        display: block;
+        margin: auto;
+        width: 40%;
+    }      
+    .live{
+        color: #FFF;
+        font-size: 2em !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 800 !important; 
+        text-transform: uppercase !important;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+        padding-bottom: 0px;    
+    }
+    .lego{
+        color: #FFF;
+        font-size: 1.3em !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 800 !important; 
+        text-transform: uppercase !important;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+        padding-bottom: 0px;    
+    }
+    .tal{
+        color: #FFF;
+        font-size: 4.0em !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 800 !important; 
+        text-transform: uppercase !important;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+
+    }
+    .procent{
+        color: #FFF;
+        font-size: 2em !important;
+        font-family: 'Open Sans', sans-serif !important;
+        font-weight: 800 !important; 
+        text-transform: uppercase !important;
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6);
+    }
+    .month{
+        font-size: 0.5em;
+    }
+    .slider {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .slick-slide {
+      margin: 0px 0px;
+    }
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+    .slick-slide {
+
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="statistics slider">
+    <div>
+      <img src="images/logo_white.svg" alt="Logo" id="logo" style="width:150px; padding-left: 16px; padding-top: 10px" />
+      <p>Beinleiðis úr<br />hagtalsgrunninum</p>
+    </div>
+    <div>
+      <h1 class="lego">Gistingar</h1>
+      <span class="tal" id="nightsnumber"></span><span class="procent"></span>
+      <p id="nightsmonth"></p>
+    </div>   
+  </section>
+
+  <script src="lib/js/jquery-dist/dist/jquery.min.js"></script>
+  <script src="lib/js/JSON-stat/json-stat.js"></script>
+  <script src="js/nights.js"></script>
+  <script src="lib/js/slick/slick/slick.js"></script>
+  
+
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".statistics").slick({     
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        fade: true,
+        autoplaySpeed: 5000,
+        arrows: false      
+
+      });
+    });
+</script>
+
+</body>
+</html>
