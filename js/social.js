@@ -108,7 +108,7 @@ function numberWithCommas(x) {
                 POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB02/fd_livsavi.px", {
                     "query": [
                         {
-                            "code": "smoothing",
+                            "code": "measure",
                             "selection": {
                                 "filter": "item",
                                 "values": [
@@ -188,7 +188,7 @@ function numberWithCommas(x) {
                 POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB02/fd_livsavi.px", {
                     "query": [
                         {
-                            "code": "smoothing",
+                            "code": "measure",
                             "selection": {
                                 "filter": "item",
                                 "values": [
@@ -258,7 +258,7 @@ function numberWithCommas(x) {
                 m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
 
                 $('#pensionersmonth').append(m);
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "67 ár o.e." }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Tils. (aldur)" }, false) * 100;
+                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_GE67" }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_TOTAL" }, false) * 100;
 
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
                 $('#pensionersnumber').append(number);
@@ -280,10 +280,10 @@ function numberWithCommas(x) {
                         {
                           "code": "age",
                           "selection": {
-                            "filter": "agg:aldur0667.agg",
+                            "filter": "agg:age_fo_0667.agg",
                             "values": [
-                              "Tils. (aldur)",
-                              "67 ár o.e."
+                              "Y_TOTAL",
+                              "Y_GE67"
                             ]
                           }
                         }                        
