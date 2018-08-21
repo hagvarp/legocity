@@ -280,7 +280,7 @@ function numberWithCommas(x) {
                         {
                           "code": "age",
                           "selection": {
-                            "filter": "agg:age_fo_0667.agg",
+                            "filter": "agg:age-fo-0667.agg",
                             "values": [
                               "Y_TOTAL",
                               "Y_GE67"
@@ -322,7 +322,7 @@ function numberWithCommas(x) {
                 m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
 
                 $('#childrenmonth').append(m);
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "00-17 ár" }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Tils. (aldur)" }, false) * 100;
+                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y00-17" }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_TOTAL" }, false) * 100;
 
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
                 $('#childrennumber').append(number);
@@ -344,10 +344,10 @@ function numberWithCommas(x) {
                         {
                           "code": "age",
                           "selection": {
-                            "filter": "agg:aldur1864.agg",
+                            "filter": "agg:age-fo-1864.agg",
                             "values": [
-                              "Tils. (aldur)",
-                              "00-17 ár"
+                              "Y_TOTAL",
+                              "Y00-17"
                             ]
                           }
                         }                  
