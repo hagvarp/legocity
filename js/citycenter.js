@@ -165,7 +165,7 @@ function numberWithCommas(x) {
                 number = ds.Data({ "year": ds.Dimension("year").id[0], "quarters": ds.Dimension("quarters").id[number.length - 1] }, false);
 
 
-                number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");
+                number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
                 number = numberWithCommas(number);
 
                 $('#brpmonth').append(mon + " " +  year);
