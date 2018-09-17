@@ -231,7 +231,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart4() {
-                POST("http://statbank.hagstova.fo/api/v1/fo/H2/AM/AM01/afk_hovtol.px", {
+                POST("https://statbank.hagstova.fo/api/v1/fo/H2/AM/AM01/afk_hovtol.px", {
                     "query": [
                         {
                           "code": "agegroup",
