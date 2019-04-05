@@ -45,7 +45,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "ALPCTJ"
+                                    "UNE_FE_PCT_LF"
                                 ]
                             }
                         },
@@ -234,11 +234,11 @@ function numberWithCommas(x) {
                 POST("https://statbank.hagstova.fo/api/v1/fo/H2/AM/AM01/afk_hovtol.px", {
                     "query": [
                         {
-                          "code": "agegroup",
+                          "code": "age",
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "15_74"
+                              "Y15-74"
                             ]
                           }
                         },
@@ -247,7 +247,7 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "VP"
+                              "LF_PCT_POP"
                             ]
                           }
                         },

@@ -52,7 +52,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "ULTIMO"
+                                    "Popu_ultimo"
                                 ]
                             }
                         },
@@ -112,7 +112,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "lowess"
+                                    "lowess_smooth"
                                 ]
                             }
                         },
@@ -130,7 +130,7 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "00"
+                              "Y_LT1"
                             ]
                           }
                         },
@@ -192,7 +192,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "lowess"
+                                    "lowess_smoot"
                                 ]
                             }
                         },
@@ -210,7 +210,7 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "00"
+                              "Y_LT1"
                             ]
                           }
                         },
@@ -322,7 +322,7 @@ function numberWithCommas(x) {
                 m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
 
                 $('#childrenmonth').append(m);
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y00-17" }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_TOTAL" }, false) * 100;
+                number = ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_LT18" }, false) / ds.Data({ "year": ds.Dimension("year").id[0], "age": "Y_TOTAL" }, false) * 100;
 
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
                 $('#childrennumber').append(number);
@@ -344,10 +344,10 @@ function numberWithCommas(x) {
                         {
                           "code": "age",
                           "selection": {
-                            "filter": "agg:age-fo-1864.agg",
+                            "filter": "agg:age-fo-1865.agg",
                             "values": [
                               "Y_TOTAL",
-                              "Y00-17"
+                              "Y_LT18"
                             ]
                           }
                         }                  

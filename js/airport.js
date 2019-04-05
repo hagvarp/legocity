@@ -52,7 +52,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "IMMIUT"
+                                    "Immigr_int"
                                 ]
                             }
                         },
@@ -121,7 +121,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "EMIUT"
+                                    "Emmigr_int"
                                 ]
                             }
                         },
