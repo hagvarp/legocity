@@ -114,7 +114,7 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "9"
+                              "9999"
                             ]
                           }
                         },
@@ -161,8 +161,8 @@ function numberWithCommas(x) {
                year = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
 
                 number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function(n) { return n; });
-                mon = ds.Dimension("quarters").id[number.length-1];
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "quarters": ds.Dimension("quarters").id[number.length - 1] }, false);
+                mon = ds.Dimension("quarter").id[number.length-1];
+                number = ds.Data({ "year": ds.Dimension("year").id[0], "quarter": ds.Dimension("quarter").id[number.length - 1] }, false);
 
 
                 number = parseFloat(Math.round(number * 100) / 100).toFixed(1).toString().replace(".", ",");
@@ -181,7 +181,7 @@ function numberWithCommas(x) {
                       "selection": {
                         "filter": "item",
                         "values": [
-                          "BRP"
+                          "CPI"
                         ]
                       }
                     },
@@ -195,7 +195,7 @@ function numberWithCommas(x) {
                         }
                     },     
                     {
-                      "code": "quarters",
+                      "code": "quarter",
                       "selection": {
                         "filter": "item",
                         "values": [

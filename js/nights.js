@@ -45,10 +45,19 @@ function numberWithCommas(x) {
                           "selection": {
                             "filter": "item",
                             "values": [
-                              "0"
+                              "STAYS"
                             ]
                           }
                         },
+                        {
+                          "code": "type of accommodation",
+                          "selection": {
+                            "filter": "item",
+                            "values": [
+                              "HOTEL"
+                            ]
+                          }
+                        },                        
                         {
                             "code": "month",
                             "selection": {
