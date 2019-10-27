@@ -192,7 +192,7 @@ function numberWithCommas(x) {
                             "selection": {
                                 "filter": "item",
                                 "values": [
-                                    "lowess_smoot"
+                                    "lowess_smooth"
                                 ]
                             }
                         },
