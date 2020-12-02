@@ -221,17 +221,17 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart43() {
-                POST("https://statbank.hagstova.fo/api/v1/en/H2/VV/VV01/fv_avrvird_t.px", {
+                POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/VV/VV01/fv_avreid0_t.px", {
                     "query": [
                         {
-                          "code": "fishing gear",
-                          "selection": {
-                            "filter": "item",
-                            "values": [
-                              "GEAR_TOTAL"
-                            ]
-                          }
-                        },                    
+                            "code": "measure",
+                            "selection": {
+                              "filter": "item",
+                              "values": [
+                                "VALUE"
+                              ]
+                            }
+                          },                
                         {
                             "code": "month",
                             "selection": {
@@ -287,8 +287,18 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart44() {
-                POST("https://statbank.hagstova.fo/api/v1/en/H2/VV/VV01/fv_avrnogd_t.px", {
+                POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/VV/VV01/fv_avreid0_t.px", {
                     "query": [                   
+                        {
+                            "code": "measure",
+                            "selection": {
+                              "filter": "item",
+                              "values": [
+                                "TONNES"
+                              ]
+                            }
+                          },
+                        
                         {
                             "code": "month",
                             "selection": {
