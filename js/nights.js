@@ -38,7 +38,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart1() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/VV/VV07/gist_alt_t.px", {
+                POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/VV/VV07/gist_hus_t.px", {
                     "query": [
                         {
                           "code": "unit",
@@ -48,16 +48,7 @@ function numberWithCommas(x) {
                               "STAYS"
                             ]
                           }
-                        },
-                        {
-                          "code": "type of accommodation",
-                          "selection": {
-                            "filter": "item",
-                            "values": [
-                              "HOTEL"
-                            ]
-                          }
-                        },                        
+                        },                     
                         {
                             "code": "month",
                             "selection": {
