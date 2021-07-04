@@ -266,7 +266,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart24() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB01/fo_aldbygd.px", {
+                POST("https://statbank.hagstova.fo/pxweb/fo/H2/H2__IB__IB01/fo_abgd_md.px", {
                     "query": [
                         {
                             "code": "year",
@@ -277,6 +277,15 @@ function numberWithCommas(x) {
                                 ]
                             }
                         },
+                        {
+                          "code": "month",
+                          "selection": {
+                            "filter": "item",
+                            "values": [
+                              "M01"
+                            ]
+                          }
+                        },                        
                         {
                           "code": "age",
                           "selection": {
@@ -330,7 +339,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart25() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB01/fo_aldbygd.px", {
+                POST("https://statbank.hagstova.fo/pxweb/fo/H2/H2__IB__IB01/fo_abgd_md.px", {
                     "query": [
                         {
                             "code": "year",
@@ -341,6 +350,15 @@ function numberWithCommas(x) {
                                 ]
                             }
                         },
+                        {
+                          "code": "month",
+                          "selection": {
+                            "filter": "item",
+                            "values": [
+                              "M01"
+                            ]
+                          }
+                        },                            
                         {
                           "code": "age",
                           "selection": {
