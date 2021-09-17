@@ -162,8 +162,7 @@ var chart73_last_month;
 //Chart 7 specific functions
 function drawChart73() {
     var jsonStatData = chart73Data;
-    //Extrat Data From JSON Stat
-    ds = JSONstat(jsonStatData).Dataset(0);
+    //Extrat Data From JSON Stat7
     //Format Data
 
     m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;
@@ -439,8 +438,7 @@ function POST(url, query, main) {
 
 //START LOADING AND BUILDING CHARTS
 $(function () {
-    loadDataAndBuildChart71();
-    loadDataAndBuildChart72();
+
     loadDataAndBuildChart73();
     loadDataAndBuildChart24();
     loadDataAndBuildChart25();
