@@ -27,17 +27,19 @@ function numberWithCommas(x) {
 
                 //Format Data             
 
-               year = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
-
-
-                number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function(n) { return n; });
-                mon = ds.Dimension("month").id[number.length - 1];
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
-
-                mon = mon.replace("M", "-");              
-                mon = year + mon;
+                mon = ds.Dimension("month").Category(ds.Dimension("month").id[0]).label;
+                year = mon.substring(0,4);
+            
+                number = ds.Data({"month": ds.Dimension("month").id[0] }, false);
+            
+                mon = mon.replace("M", "-");
+            
+                mon = mon;
                 mon = new Date(mon);
-
+            
+            
+                number = numberWithCommas(number);
+            
                 $('#immigrantmonth').append(mon.getMonthText() + " " +  year);
                 $('#immigrantnumber').append(number);
 
@@ -45,7 +47,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart31() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB01/fo_vital_md.px", {
+                POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/IB/IB01/fo_vit_md_t.px", {
                     "query": [
                         {
                             "code": "changes",
@@ -57,11 +59,11 @@ function numberWithCommas(x) {
                             }
                         },
                         {
-                            "code": "year",
+                            "code": "month",
                             "selection": {
                                 "filter": "top",
                                 "values": [
-                                    "1"
+                                    "2"
                                 ]
                             }
                         },                  
@@ -97,15 +99,18 @@ function numberWithCommas(x) {
 
                 //Format Data             
 
-               year = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;                
-
-                number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function(n) { return n; });
-                mon = ds.Dimension("month").id[number.length - 1];
-                number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
-
-                mon = mon.replace("M", "-");   
-                mon = year + mon;                           
+                mon = ds.Dimension("month").Category(ds.Dimension("month").id[0]).label;
+                year = mon.substring(0,4);
+            
+                number = ds.Data({"month": ds.Dimension("month").id[0] }, false);
+            
+                mon = mon.replace("M", "-");
+            
+                mon = mon;
                 mon = new Date(mon);
+            
+            
+                number = numberWithCommas(number);
 
                 $('#emmigrantmonth').append(mon.getMonthText() + " " +  year);
                 $('#emmigrantnumber').append(number);
@@ -114,7 +119,7 @@ function numberWithCommas(x) {
             }
 
             function loadDataAndBuildChart32() {
-                POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB01/fo_vital_md.px", {
+                POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/IB/IB01/fo_vit_md_t.px", {
                     "query": [
                         {
                             "code": "changes",
@@ -126,11 +131,11 @@ function numberWithCommas(x) {
                             }
                         },
                         {
-                            "code": "year",
+                            "code": "month",
                             "selection": {
                                 "filter": "top",
                                 "values": [
-                                    "1"
+                                    "2"
                                 ]
                             }
                         },                  

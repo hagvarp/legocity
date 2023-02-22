@@ -162,10 +162,14 @@ var chart73_last_month;
 //Chart 7 specific functions
 function drawChart73() {
     var jsonStatData = chart73Data;
+    
+    ds = JSONstat(jsonStatData).Dataset(0);
     //Extrat Data From JSON Stat7
     //Format Data
 
     m = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;
+
+    console.log(m);
 
     number = ds.Data({ "year": ds.Dimension("year").id[0] }, false);
     number = parseFloat(Math.round(number * 100) / 100).toFixed(0).toString().replace(".", ",");

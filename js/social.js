@@ -25,18 +25,18 @@ function drawChart21() {
 
     //Format Data
 
-    year = ds.Dimension("year").Category(ds.Dimension("year").id[0]).label;
+    mon = ds.Dimension("month").Category(ds.Dimension("month").id[0]).label;
+    year = mon.substring(0,4);
 
-    number = ds.Data({ "year": ds.Dimension("year").id[0] }, false).filter(function (n) { return n; });
-    mon = ds.Dimension("month").id[number.length];
-    number = ds.Data({ "year": ds.Dimension("year").id[0], "month": ds.Dimension("month").id[number.length - 1] }, false);
+    number = ds.Data({"month": ds.Dimension("month").id[0] }, false);
 
     mon = mon.replace("M", "-");
-    mon = year + mon;
+
+    mon = mon;
     mon = new Date(mon);
 
-    number = numberWithCommas(number);
 
+    number = numberWithCommas(number);
 
 
     $('#popuplationmonth').append("1. " + mon.getMonthText().toLowerCase() + " " + year);
@@ -45,19 +45,19 @@ function drawChart21() {
 }
 
 function loadDataAndBuildChart21() {
-    POST("https://statbank.hagstova.fo/api/v1/fo/H2/IB/IB01/fo_vital_md.px", {
+    POST("https://statbank.hagstova.fo:443/api/v1/fo/H2/IB/IB01/fo_vit_md_t.px", {
         "query": [
             {
                 "code": "changes",
                 "selection": {
                     "filter": "item",
                     "values": [
-                        "Popu_ultimo"
+                        "Popu_primo"
                     ]
                 }
             },
             {
-                "code": "year",
+                "code": "month",
                 "selection": {
                     "filter": "top",
                     "values": [
@@ -425,16 +425,6 @@ function loadDataAndBuildChart26() {
                     "filter": "top",
                     "values": [
                         "1"
-                    ]
-                }
-            },
-            {
-                "code": "kind of day-care",
-                "selection": {
-                    "filter": "item",
-                    "values": [
-                        "DS",
-                        "DR"
                     ]
                 }
             }
